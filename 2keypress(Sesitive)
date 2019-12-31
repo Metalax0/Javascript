@@ -1,0 +1,44 @@
+<html>
+<head><title>2 key press</title></head>
+<body>
+<div id="num1">3000</div>
+<div id="num2">4000</div>
+<div >w =<span id="w"></span></div>
+<div >q =<span id="q"></span></div>
+<div>Last raised key=<span id="deleted"></span></div>
+<script>
+keylogger={};
+
+window.addEventListener("keydown",function(e){
+    keylogger[e.key]=true;
+    setKeyLogger();
+});
+
+window.addEventListener("keyup",function(e){
+    document.getElementById("deleted").innerHTML=e.key;
+    delete keylogger[e.key];
+    setKeyLogger();
+})
+
+function setKeyLogger() { 
+    document.getElementById("w").innerHTML=keylogger['w'];
+    document.getElementById("q").innerHTML=keylogger['q'];
+}
+
+setInterval(function(){
+    div1=document.getElementById("num1") ;
+    div2=document.getElementById("num2") ;
+
+    if(keylogger['w']){
+        value=parseInt(div1.innerHTML);
+        div1.innerHTML=++div1.innerHTML;
+    }
+   if(keylogger['q']){
+        value=parseInt(div2.innerHTML);
+        div2.innerHTML=++div2.innerHTML;
+    }
+ }, 1);
+
+</script>
+</body>
+</html>
