@@ -1,0 +1,53 @@
+<html>
+<head><title>2 key press</title></head>
+<body>
+<div id="num1"></div>
+<div id="num2"></div>
+<div >w =<span id="w"></span></div>
+<div >q =<span id="q"></span></div>
+<div>Last raised key=<span id="deleted"></span></div>
+<script>
+    const div1=document.getElementById("w");
+    const div2=document.getElementById("q");
+    
+    
+window.addEventListener("keydown",boolValuesT);
+    function boolValuesT(e)
+                    {
+                     if(e.key=='w')
+                        {   
+                            window.flagw=true;
+                            
+                        }
+                    if(e.key=='q')
+                       {
+                       window.flagq=true;
+                       
+                           
+                       }
+                    }
+window.addEventListener("keyup",boolValuesF);
+    function boolValuesF(e){
+        if(e.key=='w')
+            {
+             window.flagw=false;
+             
+            }
+        if(e.key=='q'){
+           
+           window.flagq=false;
+        }
+    }
+    
+setInterval(CodetoRun,20);
+function CodetoRun()
+    {
+    if(window.flagw==true)
+    {div1.innerHTML="Front";}
+    else{div1.innerHTML="NotFront";}
+    if(window.flagq==true){div2.innerHTML="Shoot";}
+    else{div2.innerHTML="NotShoot";}   
+    }
+    </script>
+    </body>
+</html>
