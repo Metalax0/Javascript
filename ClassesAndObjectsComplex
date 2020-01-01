@@ -1,0 +1,34 @@
+<html>
+    <head><title>Classes and Objects</title></head>
+<body onload="main()">
+
+<script>
+function Student(name,roll,sub1,sub2,sub3)
+            {
+            this.name=name;
+            this.roll=roll;
+            this.getValues=function(){
+                alert("name="+name+"Roll="+roll);
+            }
+            this.subjects={
+                major:sub1,
+                minor:sub2,
+                extra:sub3
+            };
+            this.getSubjects=function(){
+                alert("major="+this.subjects.major+"minor="+this.subjects.minor+"extra="+this.subjects.extra);
+                
+            }
+            } 
+function main(){
+            const student1=new Student("jack",69,"Python","Maths","Drawing");
+            student1.getValues();
+            student1.getSubjects();
+            const student2=new Student("Rose",182,"C++","Physics","Basketball");
+            student2.getValues();
+            student2.getSubjects();
+            }
+    
+</script>    
+</body>
+</html>
