@@ -1,0 +1,21 @@
+<html>
+    <head><title>Classes and Objects</title></head>
+<body onload="main()">
+
+<script>
+function Student(name,roll)
+            {
+            this.name=name;
+            this.roll=roll;
+            this.getValues=function(){
+                alert("name="+name+"Roll="+roll);
+            }
+            } 
+function main(){
+            const student1=new Student("jack",69);
+            student1.getValues();
+            }
+    
+</script>    
+</body>
+</html>
